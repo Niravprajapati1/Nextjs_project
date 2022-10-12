@@ -14,7 +14,7 @@ function App() {
 
   useEffect(()=>{
     db.collection('todos').orderBy('timestamp','desc').onSnapshot(snapshot =>{
-  setTodos(snapshot.docs.map(doc => doc.data().todo))})
+  setTodos(snapshot.docs.map(doc => ({id: doc.id , todo: doc.data().todo })))})
   },[]);
 
   const addTodo = (e) => {
@@ -38,10 +38,12 @@ function App() {
   <form>
   <FormControl>
   <InputLabel>Write a todo</InputLabel>
+  
   <Input value={input} onChange={e  => setInput(e.target.value)}/>
   
-</FormControl>
-  <Button disabled={!input} onClick={addTodo} variant="contained" color="primary">Add todo</Button>
+  </FormControl>
+  <Button disabled={!input} onClick={addTodo} variant="contained" color="success">Add todo</Button>
+ 
   </form>
 <ul>
   {todos.map(todo=> (
