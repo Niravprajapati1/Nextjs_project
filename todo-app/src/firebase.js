@@ -7,9 +7,8 @@ const firebaseApp = firebase.initializeApp({
     projectId: "todo-89420",
     storageBucket: "todo-89420.appspot.com",
     messagingSenderId: "596898004646",
-    appId: "1:596898004646:web:fee5f4b0e4f1d34549be67",
-    measurementId: "G-PMPQ0HBJZT"
-  
+    appId: "1:596898004646:web:c91169e611293dd349be67",
+    measurementId: "G-57BC22PY34"
 });
 
 const db = firebaseApp.firestore();
